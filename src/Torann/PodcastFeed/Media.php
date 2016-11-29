@@ -96,6 +96,7 @@ class Media
         $this->url = $this->getValue($data, 'url');
         $this->guid = $this->getValue($data, 'guid');
         $this->type = $this->getValue($data, 'type');
+        $this->length = $this->getValue($data, 'length');
         $this->duration = $this->getValue($data, 'duration');
         $this->author = $this->getValue($data, 'author');
         $this->image = $this->getValue($data, 'image');
@@ -173,6 +174,7 @@ class Media
         // Create the <enclosure>
         $enclosure = $dom->createElement("enclosure");
         $enclosure->setAttribute("url", $this->url);
+        $enclosure->setAttribute("length", $this->length);
         $enclosure->setAttribute("type", $this->type);
         $item->appendChild($enclosure);
 
